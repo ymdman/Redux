@@ -10758,11 +10758,11 @@ selectorFactory) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__applyMiddleware__ = __webpack_require__(220);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__compose__ = __webpack_require__(94);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__utils_warning__ = __webpack_require__(93);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return __WEBPACK_IMPORTED_MODULE_0__createStore__["b"]; });
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return __WEBPACK_IMPORTED_MODULE_0__createStore__["b"]; });
 /* unused harmony reexport combineReducers */
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_2__bindActionCreators__["a"]; });
 /* unused harmony reexport applyMiddleware */
-/* unused harmony reexport compose */
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return __WEBPACK_IMPORTED_MODULE_4__compose__["a"]; });
 
 
 
@@ -11256,36 +11256,24 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_dom__ = __webpack_require__(112);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_dom___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_react_dom__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_react_redux__ = __webpack_require__(85);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_redux__ = __webpack_require__(89);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__containers_App__ = __webpack_require__(225);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__containers_App__ = __webpack_require__(225);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__store__ = __webpack_require__(226);
 
 
 
 
 
 
-var reducer = function reducer() {
-  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : { count: 1 };
-  var action = arguments[1];
 
-  console.log(state);
-  switch (action.type) {
-    case 'INCREMENT':
-      return {
-        count: state.count + 1
-      };
-    default:
-      console.log('aaa');
-      return state;
-  }
-};
 
-var store = Object(__WEBPACK_IMPORTED_MODULE_3_redux__["b" /* createStore */])(reducer);
+var store = Object(__WEBPACK_IMPORTED_MODULE_4__store__["a" /* default */])();
 
-Object(__WEBPACK_IMPORTED_MODULE_1_react_dom__["render"])(__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+console.log(store);
+
+__WEBPACK_IMPORTED_MODULE_1_react_dom___default.a.render(__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
   __WEBPACK_IMPORTED_MODULE_2_react_redux__["a" /* Provider */],
   { store: store },
-  __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4__containers_App__["a" /* default */], null)
+  __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3__containers_App__["a" /* default */], null)
 ), document.getElementById('app'));
 
 /***/ }),
@@ -24765,7 +24753,7 @@ var App = function App(_ref) {
   var count = _ref.count,
       onIncrementClick = _ref.onIncrementClick;
 
-  var hoge = __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+  var item = __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
     'div',
     null,
     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
@@ -24782,18 +24770,70 @@ var App = function App(_ref) {
     )
   );
 
-  return hoge;
+  return item;
 };
 
-/* harmony default export */ __webpack_exports__["a"] = (Object(__WEBPACK_IMPORTED_MODULE_1_react_redux__["b" /* connect */])(function state() {
-  return { count: state.count };
-}, function dispatch() {
-  return {
+/* harmony default export */ __webpack_exports__["a"] = (Object(__WEBPACK_IMPORTED_MODULE_1_react_redux__["b" /* connect */])(function (state) {
+  var data = { count: state.count };
+  return data;
+}, function (dispatch) {
+  var data = {
     onIncrementClick: function onIncrementClick() {
       dispatch({ type: 'INCREMENT' });
     }
   };
+
+  return data;
 })(App));
+
+/***/ }),
+/* 226 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (immutable) */ __webpack_exports__["a"] = createFinalStore;
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_redux__ = __webpack_require__(89);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__reducers_Increment__ = __webpack_require__(227);
+
+
+
+function createFinalStore() {
+  var finalCreateStore = Object(__WEBPACK_IMPORTED_MODULE_0_redux__["b" /* compose */])()(__WEBPACK_IMPORTED_MODULE_0_redux__["c" /* createStore */]);
+  return finalCreateStore(__WEBPACK_IMPORTED_MODULE_1__reducers_Increment__["a" /* default */]);
+}
+
+/***/ }),
+/* 227 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__constants_Increment__ = __webpack_require__(228);
+
+
+var increment = function increment() {
+  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : { count: 1 };
+  var action = arguments[1];
+
+  switch (action.type) {
+    case __WEBPACK_IMPORTED_MODULE_0__constants_Increment__["a" /* default */]:
+      return {
+        count: state.count + 1
+      };
+    default:
+      return state;
+  }
+};
+
+/* harmony default export */ __webpack_exports__["a"] = (increment);
+
+/***/ }),
+/* 228 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+var INCREMENT = 'INCREMENT';
+
+/* harmony default export */ __webpack_exports__["a"] = (INCREMENT);
 
 /***/ })
 /******/ ]);
