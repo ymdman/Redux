@@ -1,10 +1,11 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-const SideBar = ({ count }) => {
+const SideBar = (props, { count }) => {
   const item = (
     <div>
-      side bar {count}
+      <span>{count}</span>
+      <button onClick={() => { props.onIncrementClick(); }}>side bar</button>
     </div>
   );
 
@@ -19,4 +20,15 @@ const mapStateToProps = (state) => {
   return data;
 };
 
-export default connect(mapStateToProps)(SideBar);
+const mapDispatchToProps = (dispatch) => {
+  const data = {
+    onIncrementClick: () => {
+      dispatch({
+        type: 'INCREMENT',
+      });
+    },
+  };
+
+  return data;
+};
+export default connect(mapStateToProps, mapDispatchToProps)(SideBar);

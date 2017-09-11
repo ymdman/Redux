@@ -1,16 +1,14 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import SideBar from '../components/sidebar';
+import SideBar from '../components/Sidebar';
 
 const App = ({ count, onIncrementClick }) => {
   const item = (
     <div>
       <span>{count}</span>
       <SideBar />
-      <button onClick={() => { onIncrementClick(); }}>
-        inc
-      </button>
+      <button onClick={() => { onIncrementClick(); }}>app</button>
     </div>
   );
 
