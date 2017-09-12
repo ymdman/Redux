@@ -5,7 +5,8 @@ const SideBar = (props, { count }) => {
   const item = (
     <div>
       <span>{count}</span>
-      <button onClick={() => { props.onIncrementClick(); }}>side bar</button>
+      <button onClick={() => { props.onIncrementClick(); }}>increment from side bar</button>
+      <button onClick={() => { props.onDecrementClick(); }}>decrement from side bar</button>
     </div>
   );
 
@@ -27,8 +28,17 @@ const mapDispatchToProps = (dispatch) => {
         type: 'INCREMENT',
       });
     },
+    onDecrementClick: () => {
+      dispatch({
+        type: 'DECREMENT',
+      });
+    },
   };
 
   return data;
 };
-export default connect(mapStateToProps, mapDispatchToProps)(SideBar);
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(SideBar);

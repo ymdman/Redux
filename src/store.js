@@ -1,7 +1,7 @@
 import { compose, createStore } from 'redux';
-import rootReducer from './reducers/Increment';
+import Calc from './reducers/Calc';
 
 export default function createFinalStore() {
   const finalCreateStore = compose()(createStore);
-  return finalCreateStore(rootReducer);
+  return finalCreateStore(Calc);
 }

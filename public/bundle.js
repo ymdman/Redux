@@ -24742,13 +24742,13 @@ function verifySubselectors(mapStateToProps, mapDispatchToProps, mergeProps, dis
 "use strict";
 /* harmony export (immutable) */ __webpack_exports__["a"] = createFinalStore;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_redux__ = __webpack_require__(89);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__reducers_Increment__ = __webpack_require__(226);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__reducers_Calc__ = __webpack_require__(226);
 
 
 
 function createFinalStore() {
   var finalCreateStore = Object(__WEBPACK_IMPORTED_MODULE_0_redux__["b" /* compose */])()(__WEBPACK_IMPORTED_MODULE_0_redux__["c" /* createStore */]);
-  return finalCreateStore(__WEBPACK_IMPORTED_MODULE_1__reducers_Increment__["a" /* default */]);
+  return finalCreateStore(__WEBPACK_IMPORTED_MODULE_1__reducers_Calc__["a" /* default */]);
 }
 
 /***/ }),
@@ -24756,7 +24756,7 @@ function createFinalStore() {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__constants_Increment__ = __webpack_require__(227);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__constants_Calc__ = __webpack_require__(227);
 
 
 var increment = function increment() {
@@ -24764,7 +24764,7 @@ var increment = function increment() {
   var action = arguments[1];
 
   switch (action.type) {
-    case __WEBPACK_IMPORTED_MODULE_0__constants_Increment__["a" /* default */]:
+    case __WEBPACK_IMPORTED_MODULE_0__constants_Calc__["a" /* INCREMENT */]:
       return {
         count: state.count + 1
       };
@@ -24780,9 +24780,12 @@ var increment = function increment() {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return INCREMENT; });
+/* unused harmony export DECREMENT */
 var INCREMENT = 'INCREMENT';
+var DECREMENT = 'DECREMENT';
 
-/* harmony default export */ __webpack_exports__["a"] = (INCREMENT);
+
 
 /***/ }),
 /* 228 */

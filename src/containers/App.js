@@ -3,12 +3,13 @@ import { connect } from 'react-redux';
 
 import SideBar from '../components/Sidebar';
 
-const App = ({ count, onIncrementClick }) => {
+const App = ({ count, onIncrementClick, onDecrementClick }) => {
   const item = (
     <div>
       <span>{count}</span>
       <SideBar />
-      <button onClick={() => { onIncrementClick(); }}>app</button>
+      <button onClick={() => { onIncrementClick(); }}>increment</button>
+      <button onClick={() => { onDecrementClick(); }}>decrement</button>
     </div>
   );
 
@@ -28,6 +29,11 @@ const mapDispatchToProps = (dispatch) => {
     onIncrementClick: () => {
       dispatch({
         type: 'INCREMENT',
+      });
+    },
+    onDecrementClick: () => {
+      dispatch({
+        type: 'DECREMENT',
       });
     },
   };
