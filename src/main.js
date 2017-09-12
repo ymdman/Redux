@@ -2,9 +2,8 @@ import React from 'react';
 import ReactDom from 'react-dom';
 import { Provider } from 'react-redux';
 
-import App from './containers/App';
-
 import createFinalStore from './store';
+import App from './containers/App';
 
 const store = createFinalStore();
 

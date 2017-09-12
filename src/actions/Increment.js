@@ -1,11 +1,11 @@
 import INCREMENT from '../constants/Increment';
 
-const hoge = () => {
-  const fuga = {
+const increment = () => {
+  const data = {
     type: INCREMENT,
   };
 
-  return fuga;
+  return data;
 };
 
-export default hoge;
+export default increment;
