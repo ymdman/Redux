@@ -1,6 +1,10 @@
 import * as Calc from '../constants/Calc';
 
-const calc = (state = { count: 1 }, action) => {
+const initialState = {
+  count: 1,
+};
+
+const calc = (state = initialState, action) => {
   switch (action.type) {
     case Calc.INCREMENT:
       return {
